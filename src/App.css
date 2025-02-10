@@ -9,10 +9,19 @@ body.dark {
 }
 
 body.blue {
-  background-color: #007bff !important;
+  background-color: #344CB7 !important;
   color: #ffffff !important;
 }
 
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
 .centered-container {
   display: flex;
@@ -21,4 +30,6 @@ body.blue {
   height: 100vh; 
   text-align: center; 
   flex-direction: column;
+  width: 100%; /* Ajout pour éviter tout problème d'alignement */
 }
+

@@ -10,11 +10,10 @@ const App = () => {
   return (
     <div className='centered-container'>
       <div className={theme}>
-        <h4>Changer le thème</h4>
+        <h3>Change Theme</h3>
         <ThemeSelector />
     </div>
     </div>
-   
   );
 };
 

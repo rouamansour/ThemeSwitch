@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTheme } from './useTheme';
 
 const ThemeSelector = () => {
@@ -6,11 +5,11 @@ const ThemeSelector = () => {
 
   return (
     <div>
-      <p>Thème actuel : {theme}</p>
+      <h4>Current Theme : {theme}</h4>
       <select value={theme} onChange={(e) => updateTheme(e.target.value)}>
-        <option value="light">Clair</option>
-        <option value="dark">Sombre</option>
-        <option value="blue">Bleu</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="blue">Blue</option>
       </select>
     </div>
   );

@@ -1,21 +1,28 @@
 import { useState, useEffect } from 'react';
-
-// Sauvegarde le thème dans localStorage pour qu'il persiste
-const getInitialTheme = () => {
-  return localStorage.getItem('theme') || 'light';
-};
+import { themeManager } from './ThemeManager';
+import { themeObserver } from './ThemeObserver';
 
 export const useTheme = () => {
-  const [theme, setTheme] = useState(getInitialTheme);
+  const [theme, setTheme] = useState(themeManager.getTheme());
 
   useEffect(() => {
-    document.body.className = ''; // Reset les classes pour éviter les conflits
+    // Appliquer le thème au body
+    document.body.className = ''; // Réinitialise les classes pour éviter les conflits
     document.body.classList.add(theme);
-    localStorage.setItem('theme', theme); // Sauvegarde le thème
+
+    // Abonnement aux changements de thème
+    const handleThemeChange = (newTheme) => {
+      document.body.className = ''; // Nettoie les classes existantes
+      document.body.classList.add(newTheme);
+      setTheme(newTheme);
+    };
+
+    themeObserver.subscribe(handleThemeChange);
+    return () => themeObserver.unsubscribe(handleThemeChange);
   }, [theme]);
 
   const updateTheme = (newTheme) => {
-    setTheme(newTheme);
+    themeManager.setTheme(newTheme);
   };
 
   return { theme, updateTheme };
