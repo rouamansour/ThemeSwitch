@@ -1,20 +1,20 @@
-import './App.css'
-import { useTheme } from './useTheme';
-import ThemeSelector from './ThemeSelector';
+import "./App.css";
+import ThemeSelector from "./ThemeSelector";
+import withTheme from "./withTheme";
+import PropTypes from 'prop-types';
 
-
-const App = () => {
-  const { theme } = useTheme(); // Récupérer le thème actuel
-
+const App = ({ theme }) => {
   return (
-    <div className='centered-container'>
+    <div className="centered-container">
       <div className={theme}>
         <h3>Change Theme</h3>
         <ThemeSelector />
-    </div>
+      </div>
     </div>
   );
 };
+App.propTypes = {
+  theme: PropTypes.string.isRequired,
+};
 
-export default App;
-
+export default withTheme(App);
