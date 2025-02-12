@@ -30,6 +30,6 @@ html, body {
   height: 100vh; 
   text-align: center; 
   flex-direction: column;
-  width: 100%; /* Ajout pour éviter tout problème d'alignement */
+  width: 100%;
 }
 

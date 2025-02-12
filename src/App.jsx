@@ -1,5 +1,4 @@
 import './App.css'
-import React from 'react';
 import { useTheme } from './useTheme';
 import ThemeSelector from './ThemeSelector';
 

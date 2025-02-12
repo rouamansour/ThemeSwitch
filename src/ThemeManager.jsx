@@ -1,5 +1,3 @@
-import { themeObserver } from './ThemeObserver';
-
 class ThemeManager {
   static instance;
 
@@ -7,19 +5,16 @@ class ThemeManager {
     if (ThemeManager.instance) {
       return ThemeManager.instance;
     }
-    this.theme = localStorage.getItem('theme') || 'light';
+    this.theme = 'Light'; 
     ThemeManager.instance = this;
   }
 
   setTheme(theme) {
     this.theme = theme;
-    localStorage.setItem('theme', theme);
-    themeObserver.notify(theme); // Notifier les abonnés
   }
 
   getTheme() {
     return this.theme;
   }
 }
-
-export const themeManager = new ThemeManager();
+export const themeManager = new ThemeManager(); 
