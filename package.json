@@ -1,6 +1,7 @@
 {
   "name": "myapp",
   "private": true,
+  "homepage": "https://https://rouamansour.github.io/ThemeSwitch/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
